@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.a.p02_weatherlist.MainActivity">
+
+    <ImageView
+        android:id="@+id/weatherIcon"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_width="48dp"
+        android:layout_height="48dp" />
+
+    <LinearLayout
+        android:padding="8dp"
+        android:layout_weight="0.83"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp">
+
+        <TextView
+            android:id="@+id/hour"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="3 DAY"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/day"
+            android:paddingLeft="30dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="3 DAY"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/temp"
+            android:paddingLeft="30dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="30 temp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/wfKor"
+            android:paddingLeft="30dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="구름 많음"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

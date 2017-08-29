@@ -27,6 +27,7 @@ public class CustomListActivity extends AppCompatActivity {
     }
 
     ArrayList<MyClass> list = new ArrayList<>();
+
     class MyAdapter extends BaseAdapter{
 
         @Override

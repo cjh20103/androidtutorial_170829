@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -14,7 +15,9 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<MyData> list = new ArrayList<>();
 
     enum DataType{ none, hourType, dayType, tempType, wfKorType};
+
 
     class MyTask extends AsyncTask<String, Void, String> {
 
@@ -121,7 +125,21 @@ public class MainActivity extends AppCompatActivity {
 
             hour.setText(data.hour +"시간");
             day.setText(data.day+"일");
-            temp.setText(data.temp+"도");
+            Date date = new Date();
+            date.setDate(date.getDate()+Integer.parseInt(data.day));
+            date.setHours(Integer.parseInt(data.hour));
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 HH시");
+            String strDate = sdf.format(date);
+//            date.setText(strDate);
+
+            ImageView weatherIcon = (ImageView) convertView.findViewById(R.id.weatherIcon);
+            if(position%2 == 0){
+                weatherIcon.setImageResource(R.mipmap.ic_launcher);
+            } else{
+                weatherIcon.setImageResource(R.mipmap.ic_launcher_round);
+            }
+
+            temp.setText(data.temp+"c");
             wfKor.setText(data.wfKor);
 
             return convertView;
